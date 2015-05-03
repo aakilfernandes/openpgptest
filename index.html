@@ -2,5 +2,14 @@
 	<head></head>
 	<body>
 		<script src="bower_components/openpgp/dist/openpgp.js"></script>
+		<script>
+			openpgp.generateKeyPair({
+				numBits: 2048
+				,userId: 'Jon Smith <jon.smith@example.org>'
+			}).then(function(keypair) {
+				console.log(keypair)
+				document.write(keypair.publicKeyArmored)
+			})
+		</script>
 	</body>
 </html>
